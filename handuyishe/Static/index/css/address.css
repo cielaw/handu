@@ -1,0 +1,29 @@
+#order {
+  width: 100%;
+}
+#order .order {
+  width: 840px;
+  margin: 0 auto;
+}
+#order .order .theme {
+  width: 840px;
+  height: 22px;
+  color: #C80A28;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #C80A28;
+}
+#order .order .theme .add {
+  float: right;
+}
+#order .order table tr th {
+  text-align: center;
+  background: #FAFAFA;
+}
+#order .order table tr td {
+  text-align: center;
+}
+/*# sourceMappingURL=address.css.map */

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/cart.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		
+		<script type="text/javascript">
+    		var requestCartc = "{|U:'Cart/countAjax'}";
+		</script>
+		<script type="text/javascript" src="__STATIC__/index/js/cart.js"></script>
+	</head>
+	<body>
+		<!--顶部导航开始-->
+		<include file='__VIEW__/commom/header_cart.html' />
+		<!--顶部导航右边结束-->
+		<div id="cartAll">
+			<div class="carHeader">
+				<a href="" class="headerLeft"></a>
+				<div class="headerRight">
+					
+				</div>
+			</div>
+			<div class="cartContent">
+				<div class="goodsattr">
+					<ul>
+						<li style="width: 381px;">商品名称</li>
+						<li style="width: 132px;">售价</li>
+						<li style="width: 132px;">数量</li>
+						<li style="width: 122px;">小计</li>
+						<li style="width: 134px;">操作</li>
+						<li style="width: 186px;">备注</li>
+					</ul><span id="">
+						
+					</span>
+				</div>
+				<div class="goodsValue">
+					<foreach from="$info['goods']" key='$k' value='$v'>
+					<div class="goodThis">
+						<h3 class="brandBuy" sid='{$k}'>品牌：{$v.bname}</h3>
+						<ul>
+							<li style="width:367px;
+	;">
+								<img src="__ROOT__/{$v.listpic}" width="60" />
+								<span >{$v.name|hd_substr:16,'...'}
+								<br />
+									<foreach from="$v['options']" key='$kk' value='$vv'>
+										{$kk}:{$vv}
+									</foreach>
+								</span>
+							</li>
+							<li style="width: 132px;">
+								<span>
+									{$v.price}
+								</span>
+							</li>
+							<li style="width: 132px;" >
+								
+								<span>
+									
+									<i class="decrease">-</i>
+									<input type="" name="" id="" class="inputNum" value="{$v.num}" />
+									<i class="increase">+</i>
+								</span>
+							</li>	
+							<li style="width: 122px;">
+								<span class="totalPrice" >
+									{$v.total}
+								</span>
+								
+							</li>
+							<li style="width: 134px;">
+								
+								<span >
+									<a href="{|U:'del',array('sid'=>$k)}" class="del">删除</a>
+								</span>
+							</li>
+							<li style="width: 184px;
+	;"></li>
+						</ul>
+					</div>
+					</foreach>
+					
+					<div class="countGoods">
+						<table border="0" cellspacing="" cellpadding="">
+							<tr>
+								<td class="totelnum">{$info.total_rows}件商品</td>
+								<td class="totelcount">总计：</td><td class="totelPrice" >{$info.total}</td></tr>
+							<tr><td class="totelnum1"></td><td class="totelcount">满立减：</td><td >- ￥0.00</td></tr>
+						</table>
+					</div>	
+					<div class="yourPay">
+						<h3>购物金额总计： <i class="totelPrice">{$info.total}</i></h3>
+					</div>
+					
+				</div>
+				<div class="PurchaseAction">
+					<a href="{|U:'Index/index'}">
+						<div class="continue"></div>
+					</a>
+					
+					<div >
+						<a href="{|U:'checkout'}" class="toPay"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--尾部开始-->
+		<include file='__VIEW__/commom/bottom.html' />
+		<!--尾部结束-->
+		<script type="text/javascript">
+			$(function(){
+				//删除用户、帖子
+				$('.del').click(function(){
+					return confirm('确定要删除吗？');
+				})
+
+			})
+	</script>
+	</body>
+		

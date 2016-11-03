@@ -1,0 +1,77 @@
+#member {
+  width: 100%;
+}
+#member .member {
+  width: 990px;
+  margin: 0 auto;
+}
+#member .member .memNav {
+  color: #999;
+  font-family: "宋体";
+  font-weight: 500;
+  line-height: 14px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+#member .member .memContent {
+  width: 992px;
+  height: 500px;
+}
+#member .member .memContent .memLeft {
+  width: 138px;
+  height: 500px;
+  float: left;
+}
+#member .member .memContent .memLeft .home {
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin-bottom: 5px;
+  border: 1px solid #DDD;
+  background: url(../images/1.png) no-repeat 12px 5px;
+  float: left;
+}
+#member .member .memContent .memLeft .home span {
+  margin-left: 50px;
+  line-height: 40px;
+  color: #333;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  font-weight: 700;
+}
+#member .member .memContent .memLeft .nav {
+  width: 140px;
+  height: 300px;
+  float: left;
+}
+#member .member .memContent .memLeft .nav dl {
+  border: 1px solid #DDD;
+}
+#member .member .memContent .memLeft .nav dl dt {
+  width: 138px;
+  height: 30px;
+  background: #FAFAFA;
+  line-height: 30px;
+  text-indent: 5px;
+}
+#member .member .memContent .memLeft .nav dl dt span {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 8px;
+  height: 5px;
+  display: inline-block;
+  background: url(../images/user_center.png) no-repeat -39px -290px;
+}
+#member .member .memContent .memLeft .nav dl dd {
+  font-family: "微软雅黑";
+  padding-bottom: 7px;
+  line-height: 17px;
+  text-indent: 10px;
+}
+#member .member .memContent .memRight {
+  width: 840px;
+  height: 600px;
+  float: right;
+}
+/*# sourceMappingURL=member.css.map */

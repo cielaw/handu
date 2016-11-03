@@ -1,0 +1,24 @@
+<div id="global_nav">
+	<div class="global_nav">
+		<div class="global_info_left">
+			<ul>
+				<li><a href="__ROOT__" class="returnIndex">返回首页</a></li>
+				<!--<li><a href="">收藏本站</a></li>-->		
+			</ul>
+		</div>		
+		<div class="global_info_right">
+			<ul class="reloZome">
+				<if value="isset($_SESSION['email']) && isset($_SESSION['uid'])">
+					<li><a href="{|U:'Login/out'}">您好,{$hd.session.email}！</a></li>
+					<li><a href="{|U:'Login/out'}">退出</a></li>
+				<else/>
+					<li><a href="">您好，欢迎光临韩都衣舍！</a></li>
+					<li><a href="{|U:'Login/login'}">登录 </a></li>
+					<li><a href="{|U:'Register/register'}" class="info_red" target="_blank">注册</a></li>
+				</if>
+					<li><a href="{|U:'Cart/cart'}">购物车</a></li>
+					<li><a href="{|U:'Member/index'}">个人中心</a></li>
+			</ul>
+		</div>		
+	</div>
+</div>						

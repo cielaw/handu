@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script type="text/javascript" src="__STATIC__/Admin/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/Admin/js/jquery-1.7.2.min.js"></script>
+    	<script type="text/javascript" src="__STATIC__/Admin/js/public.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/css/goodsType.css"/>
+	</head>
+	<body>
+		<h3 class="title"><span class="btn btn-primary">货品列表</span><a href="{|U:'goods'}" class="btn">商品列表</a></h3>
+		<table border="" cellspacing="" cellpadding="" class="table table-bordered">
+			<tr pid='0'>
+				<th>货品ID</th>
+				<foreach from="$spec" key="$k" value="$v">
+				<th>{$v.aname}</th>
+				</foreach>
+				<th>库存</th>
+				<th>货号</th>
+				<th>操作</th>
+			</tr>
+			<foreach from="$goodsList" key="$k" value='$v'>
+			<tr>
+				<td>{$v.glid}</td>
+				<foreach from="$v['unite']" key='$key' value='$value'>
+				<td>{$value.gavalue}</td>
+				</foreach>
+				<td>{$v.stock}</td>
+				<td>{$v.artno}</td>
+				<td>
+					<a href="{|U:'editList',array('glid'=>$v['glid'],'gid'=>$_GET['gid'])}" class="btn btn-info btn-mini">修改</a>
+					<a href="{|U:'delList',array('glid'=>$v['glid'],'gid'=>$_GET['gid'])}" class="btn btn-danger btn-mini del">删除</a>
+					
+				</td>
+			</tr>
+			</foreach>
+			<tr pid='0'>
+				<th>添加货品</th>
+				<form action="" method="post">
+				<foreach from="$spec" key='$k' value='$v'>
+				<th>
+					<select name="combine[]">
+						
+						<option value="">请选择</option>	
+						<foreach from="$v['opt']" key='$kk' value='$vv'>
+						<option value="{$vv.gaid}">{$vv.gavalue}</option>		
+						</foreach>
+					</select>
+				</th>
+				</foreach>
+				<th>
+					<input type="" name="stock" id="" value="" />
+				</th>
+				<th>
+					<input type="" name="artno" id="" value="" />
+				</th>
+				<th>
+					<input type="submit" name="" id="" value="确认添加"  class="btn btn-info btn-mini" />
+				</th>
+			</tr>
+			</form>
+			
+		</table>
+	
+	</body>
+</html>

@@ -1,0 +1,353 @@
+#goodsDetails {
+  width: 100%;
+  padding-top: 30px;
+}
+#goodsDetails .goodsDetails {
+  width: 1200px;
+  margin: 0 auto;
+}
+#goodsDetails .goodsDetails .detailNav {
+  width: 1100px;
+  height: 26px;
+  text-indent: 5px;
+  margin-top: 20px;
+  line-height: 26px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #333;
+  font-family: arial;
+}
+#goodsDetails .goodsDetails .detailNav a {
+  margin-right: 10px;
+}
+#goodsDetails .goodsDetails .hotCategory {
+  float: left;
+  width: 175px;
+}
+#goodsDetails .goodsDetails .hotCategory .hotUl {
+  width: 170px;
+}
+#goodsDetails .goodsDetails .hotCategory .hotUl h3 {
+  width: 170px;
+  height: 30px;
+  background: url(../images/cate0.png) no-repeat 0 0;
+}
+#goodsDetails .goodsDetails .hotCategory .hotUl li {
+  background: url(../images/menu_arr.png) no-repeat 17px 5px;
+  text-indent: 26px;
+  font-family: "Microsoft YaHei", Tahoma, Helvetica, sans-serif;
+  height: 27px;
+  line-height: 17px;
+}
+#goodsDetails .goodsDetails .hotCategory .newGoods {
+  width: 170px;
+  height: 125px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv {
+  width: 170px;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv h3 {
+  width: 170px;
+  height: 19px;
+  background: url(../images/new.png) no-repeat 0 0;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul {
+  width: 170px;
+  border: 1px solid #DDD;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul li {
+  width: 158px;
+  height: 212px;
+  margin: 0 auto;
+  border-bottom: 1px dashed #DDD;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul li img {
+  width: 158px;
+  height: 158px;
+  display: block;
+  margin: 5 auto;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul li h5 {
+  margin: 5 auto;
+  text-align: center;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul li p em {
+  float: left;
+  margin-left: 20px;
+  color: #333;
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25px;
+}
+#goodsDetails .goodsDetails .hotCategory .newDiv ul li p i {
+  float: right;
+  margin-right: 25px;
+  color: #999;
+  font-family: "微软雅黑";
+  line-height: 26px;
+  text-decoration-line: line-through;
+}
+#goodsDetails .goodsDetails .hotCategory .hotDiv h3 {
+  background: url(../images/hot.png) no-repeat 0 0;
+  margin-top: 35px;
+}
+#goodsDetails .goodsDetails .hotCategory .fallNew {
+  margin-top: 30px;
+}
+#goodsDetails .goodsDetails .product_details {
+  float: right;
+  width: 1000px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop {
+  width: 1000px;
+  height: 580px;
+  border: 1px solid #EDEDED;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailLeft {
+  float: left;
+  width: 482px;
+  border-right: 1px solid #EDEDED;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailLeft .left {
+  width: 480px;
+  height: 480px;
+  position: relative;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailLeft ul {
+  margin-top: 20px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailLeft ul li {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-left: 20px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailLeft ul li img {
+  width: 70px;
+  height: 70px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight {
+  width: 500px;
+  height: 501px;
+  float: left;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo {
+  width: 476px;
+  height: 200px;
+  border-bottom: 1px solid #DDD;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo h1 {
+  color: #333;
+  font-family: "宋体";
+  font-weight: 700;
+  line-height: 24px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p {
+  color: #777;
+  font-family: "宋体";
+  font-size: 14px;
+  line-height: 30px;
+  padding-top: 2px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p i {
+  font-family: "microsoft yahei";
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .detailPrice {
+  padding-left: 20px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .detailPrice em {
+  text-decoration: line-through;
+  color: #666;
+  font-family: "Tahoma", tahoma, verdana, arial, sans-serif;
+  font-weight: 700;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .newPrice {
+  color: #C80A28;
+  font-family: "Tahoma", tahoma, verdana, arial, sans-serif;
+  font-size: 20px;
+  vertical-align: -2px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .sale {
+  margin-left: 8px;
+  padding: 2px;
+  background: #74C8B1;
+  vertical-align: 2px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .starOn {
+  width: 72px;
+  height: 12px;
+  display: inline-block;
+  background: url(../images/star-s.png) no-repeat -1px -17px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .num {
+  margin-left: 7px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .detailInfo p .commentNum {
+  color: red;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo {
+  width: 476px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div {
+  color: #838383;
+  font-family: "Microsoft YaHei", "SimSun", tahoma, verdana, arial, san;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
+  clear: both;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div span {
+  margin-top: 5px;
+  float: left;
+  display: block;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div ul li {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 13px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div ul li span {
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  font-size: 15px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div ul li .spec {
+  height: 20px;
+  width: 50px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 13px;
+  border: 1px solid #C3C3C3;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div ul li .spec img {
+  height: 34px;
+  width: 34px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div ul li .red {
+  border: 1px solid red;
+  background: url(../images/selected.png) no-repeat 35px 5px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div i {
+  width: 14px;
+  height: 14px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  border: 1px solid #9A9A9A;
+  line-height: 14px;
+  text-align: center;
+  font-family: "Microsoft YaHei", "SimSun", tahoma, verdana, arial, sans;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div .decrease {
+  margin-left: 30px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo div .inputNum {
+  width: 28px;
+  height: 17px;
+  text-align: center;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo .submit {
+  width: 380px;
+  height: 200px;
+  margin-left: 30px;
+  padding-left: 20px;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo .submit a {
+  width: 160px;
+  height: 43px;
+  display: block;
+  float: left;
+  margin: 8px;
+  line-height: 43px;
+  text-align: center;
+  font-size: 17px;
+  color: white;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo .submit .buy {
+  background: url(../images/detail_buy.png) no-repeat 0 0;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo .submit .addCart {
+  background: url(../images/detail_addcart.png) no-repeat 0 0;
+}
+#goodsDetails .goodsDetails .product_details .detailsTop .detailRight .shopInfo .buyNum {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+#goodsDetails .goodsDetails .product_details .detailTab {
+  width: 1000px;
+  margin-top: 30px;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .tabBarBox {
+  width: 998px;
+  height: 35px;
+  line-height: 30px;
+  border-top: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  border-bottom: 1px solid #EDEDED;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .tabBarBox ul {
+  width: 998px;
+  height: 32px;
+  line-height: 30px;
+  border-bottom: 3px solid #EDEDED;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .tabBarBox ul li {
+  width: 138px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  float: left;
+  border-left: 1px solid #DDD;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .tabBarBox ul li a {
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  font-weight: 700;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .flatContent {
+  width: 1000px;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .flatContent .goodsAttrList {
+  width: 750px;
+  height: 130px;
+  margin: 0 auto;
+  background: #F6F6F6;
+  margin-top: 30px;
+  border: 1px solid #E6E6E6;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .flatContent .goodsAttrList ul li {
+  width: 220px;
+  height: 18px;
+  float: left;
+  color: #666;
+  font-family: tahoma, arial, 宋体;
+  line-height: 18px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .flatContent .goodsShow {
+  width: 750px;
+  margin: 0 auto;
+}
+#goodsDetails .goodsDetails .product_details .detailTab .flatContent .goodsShow img {
+  margin-top: 20px;
+}
+/*# sourceMappingURL=details.css.map */

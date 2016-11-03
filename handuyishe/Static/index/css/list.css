@@ -1,0 +1,335 @@
+#listContent {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#listContent .listContent {
+  width: 1200px;
+  margin: 0 auto;
+}
+#listContent .listContent .cateLeft {
+  width: 180px;
+  float: left;
+}
+#listContent .listContent .cateLeft .cateTree {
+  width: 180px;
+  margin-top: 30px;
+  border-bottom: 1px solid gray;
+}
+#listContent .listContent .cateLeft .cateTree dl {
+  width: 180px;
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+#listContent .listContent .cateLeft .cateTree dl a {
+  font-family: "agency fb";
+  font-size: 15px;
+}
+#listContent .listContent .cateLeft .cateTree dl dt {
+  line-height: 39px;
+  padding-left: 10px;
+  font-family: "宋体";
+  font-weight: 700;
+  font-size: 14px;
+  border-bottom: 1px solid #808080;
+}
+#listContent .listContent .cateLeft .cateTree dl dt i {
+  height: 8px;
+  width: 8px;
+  display: block;
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+  background: url(../images/tri.png) no-repeat -2px -6px;
+}
+#listContent .listContent .cateLeft .cateTree dl dd {
+  width: 180px;
+}
+#listContent .listContent .cateLeft .cateTree dl dd h3 {
+  width: 163px;
+  height: 26px;
+  background: url(../images/plus.png) no-repeat 5px 7px;
+  padding-left: 17px;
+  line-height: 26px;
+}
+#listContent .listContent .cateLeft .cateTree dl dd ul li {
+  width: 180px;
+  height: 26px;
+  line-height: 26px;
+  text-indent: 4px;
+  padding-left: 10px;
+}
+#listContent .listContent .cateLeft .cateTree dl dd ul li a {
+  font-size: 15px;
+  font-weight: 600px;
+  font-family: "微软雅黑";
+}
+#listContent .listContent .cateLeft .top10 {
+  margin-top: 30px;
+  width: 180px;
+  border: 1px solid #DDDDDD;
+}
+#listContent .listContent .cateLeft .top10 h3 {
+  height: 25px;
+  line-height: 25px;
+  width: 100%;
+  background-color: #333333;
+  color: white;
+  font-family: "Microsoft YaHei", Tahoma, Helvetica, sans-serif;
+  text-indent: 5px;
+}
+#listContent .listContent .cateLeft .top10 .topOne {
+  width: 180px;
+  margin-top: 5px;
+}
+#listContent .listContent .cateLeft .top10 .topOne a img {
+  width: 162px;
+  display: block;
+  margin: 0 auto;
+}
+#listContent .listContent .cateLeft .top10 .topOne p {
+  width: 180px;
+  height: 25px;
+  line-height: 25px;
+}
+#listContent .listContent .cateLeft .top10 .topOne p .price {
+  float: left;
+  color: #C80A28;
+  font-family: arial;
+  font-size: 15px;
+  text-indent: 6px;
+}
+#listContent .listContent .cateLeft .top10 .topOne p .num {
+  float: right;
+  margin-right: 5px;
+}
+#listContent .listContent .cateLeft .top10 .topOne p .num i {
+  color: #C80A28;
+}
+#listContent .listContent .cateLeft .top10 .topOne h1 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+#listContent .listContent .cateRight {
+  width: 1000px;
+  margin-bottom: 30px;
+  float: right;
+}
+#listContent .listContent .cateRight .handuListNav {
+  width: 1000px;
+  height: 26px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 26px;
+}
+#listContent .listContent .cateRight #attr-box {
+  width: 1000px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border {
+  overflow: hidden;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px dotted #333;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border h2 {
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 70px;
+  text-align: right;
+  float: left;
+  display: inline-block;
+  font-size: 15px;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border ul.attr-content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border ul.attr-content li {
+  float: left;
+  margin-left: 10px;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border ul.attr-content li a {
+  display: inline-block;
+  color: #C80A2B;
+  font-size: 12px;
+  padding: 5px;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border ul.attr-content li a:hover {
+  background: #C80A2B;
+  color: #fff;
+}
+#listContent .listContent .cateRight #attr-box .attr ul li.attr-border ul.attr-content li a.hover {
+  background: #C80A2B;
+  color: #fff;
+}
+#listContent .listContent .cateRight #attr-box .attr .more {
+  width: 200px;
+  height: 35px;
+  border: 1px solid #B3B3B3;
+  border-top: white;
+  position: absolute;
+  bottom: -36px;
+  left: 400px;
+  text-align: center;
+  line-height: 35px;
+  cursor: pointer;
+}
+#listContent .listContent .cateRight .sortBar {
+  width: 1000px;
+  height: 32px;
+  border: 1px solid #DDD;
+  margin-bottom: 10px;
+}
+#listContent .listContent .cateRight .sortBar .sortBarLeft {
+  float: left;
+  width: 360px;
+  height: 30px;
+}
+#listContent .listContent .cateRight .sortBar .sortBarLeft ul li {
+  float: left;
+  width: 80px;
+  height: 30px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  line-height: 30px;
+}
+#listContent .listContent .cateRight .sortBar .sortBarLeft ul li span {
+  display: inline-block;
+  width: 7px;
+  height: 8px;
+}
+#listContent .listContent .cateRight .sortBar .barSearch {
+  width: 98px;
+  height: 22px;
+  float: left;
+}
+#listContent .listContent .cateRight .sortBar .barSearch .priceSearch {
+  width: 41px;
+  height: 22px;
+  border: 1px solid #D6D6D6;
+  margin: 1px;
+}
+#listContent .listContent .cateRight .sortBar .searchIf {
+  float: left;
+  width: 190px;
+  height: 30px;
+}
+#listContent .listContent .cateRight .sortBar .searchIf ul li {
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#listContent .listContent .cateRight .sortBar .searchIf ul li .discountIcon {
+  float: left;
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: block;
+  background: url(../images/check.png) no-repeat 0 0;
+}
+#listContent .listContent .cateRight .sortBar .searchIf ul li .discount {
+  display: inline-block;
+  float: left;
+  text-indent: 5px;
+}
+#listContent .listContent .cateRight .productGrid {
+  width: 980px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin {
+  width: 1020px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li:hover {
+  overflow: visible;
+  border: 1px solid white;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li:hover .price {
+  bottom: 0px;
+  left: 0px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li {
+  float: left;
+  margin-right: 10px;
+  width: 235px;
+  height: 288px;
+  margin-bottom: 10px;
+  border: 1px solid #C3C3C3;
+  position: relative;
+  overflow: hidden;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div:hover {
+  border: 1px solid #C80A28;
+  z-index: 30;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div {
+  width: 234px;
+  height: 330px;
+  position: absolute;
+  background: white;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div img {
+  width: 222px;
+  height: 222px;
+  display: block;
+  margin: 5px auto;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price {
+  height: 35px;
+  width: 228px;
+  position: absolute;
+  bottom: 37px;
+  left: 0px;
+  background: white;
+  z-index: 100;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price .newPrice {
+  color: #C80A28;
+  float: left;
+  font-family: arial;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 9px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price .oldPrice {
+  text-decoration: line-through;
+  margin-right: 16px;
+  margin-top: 2px;
+  line-height: 30px;
+  font-size: 16px;
+  color: black;
+  float: right;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productTitle {
+  font-family: 微软雅黑;
+  line-height: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 10;
+  padding: 4px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus {
+  height: 47px;
+  width: 235.317px;
+  border-top: 1px solid #DDD;
+  background: white;
+  position: relative;
+  z-index: 30;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus span {
+  display: block;
+  float: left;
+  height: 38px;
+  width: 117px;
+  text-align: center;
+  margin-top: 10px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus .first {
+  border-right: 1px solid #DDD;
+}
+/*# sourceMappingURL=list.css.map */

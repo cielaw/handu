@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script type="text/javascript" src="__STATIC__/Admin/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/Admin/js/jquery-1.7.2.min.js"></script>
+    	<script type="text/javascript" src="__STATIC__/Admin/js/public.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/css/goodsType.css"/>
+	</head>
+	<body>
+		<h3 class="title"><span class="btn btn-primary">{$type.tname}商品品牌</span><a href="{|U:'add'}" class="btn">添加品牌</a></h3>
+		<table border="" cellspacing="" cellpadding="" class="table table-bordered">
+			<tr pid='0'>
+				<th>品牌ID</th>
+				<th>品牌名称</th>
+				<th>品牌LOGO</th>
+				<th>排序</th>
+				<th>是否热门</th>
+				<th>操作</th>
+			</tr>
+			<form action="" method="post">
+			<foreach from='$info' key='$k' value='$v'>
+			<tr>
+				<td>{$v.bid}</td>
+				<td>{$v.bname}</td>
+				<td><if value="$v.logo"><img src="__ROOT__/{$v.logo}" width="50"/><else/>无logo</if></td>
+				<td><input type="text" name="{$v.bid}" id="order" value="{$v.sort}" /></td>
+				<td>{$v.is_hot}</td>
+				
+				<td>
+					<a href="{|U:'edit',array('bid'=>$v['bid'])}" class="btn btn-info btn-mini">修改</a><a href="{|U:'delete',array('bid'=>$v['bid'])}" class="btn btn-danger btn-mini del">删除</a>
+					
+				</td>
+			</tr>
+			</foreach>
+			<tr pid='0'><th colspan="6"><input type="submit" class="btn btn-primary" value="排序"/></th></tr>
+			</form>
+		</table>
+	
+	</body>
+</html>

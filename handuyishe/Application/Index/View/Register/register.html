@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/register.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/commom.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/login.js"></script>
+		<script type="text/javascript">
+			var requestUrii = "{|U:'Index/ajaxGetCart'}";
+		</script>
+	</head>
+	<body>
+		<include file='__VIEW__/commom/header.html'/>
+		<!--注册开始-->
+		<div id="register">
+			<div class="adRegister">
+				
+			</div>
+			<div class="Register">
+				<div class="RegisterLeft">
+					<div class="login">
+						已是韩都衣舍用户：<a href="{|U:'Login/login'}" class="toLogin">直接登录</a>
+					</div>
+					<div class="QRCode">
+						<img src="__STATIC__/index/images/367-250.png"/>
+					</div>
+					
+				</div>
+				<div class="RegisterRight">
+					<div class="RegisterReal">
+						<h3><span></span>填写你的信息：</h3>
+						<div class="registerForm">
+							<form action="{|U:'register/register'}" method="post" id="registerForm">
+								<div class="emailInput">
+									<p><i>Email：</i><input type="text" name="email" id="email"/><span></span> </p>
+									<h5 id="emailError">Email地址作为用户名，同时也用于接收账户信息、订单通知及密码找回等功能</h5>
+								</div>
+								<div class="emailInput">
+									<p><i>密码：</i><input type="password" name="password" id="password"/><span></span> </p>
+									<h5 id="passwordError">8-24位字符，必须包含字母、数字的组合</h5>
+								</div>
+								<div class="emailInput">
+									<p><i>确认密码：</i><input type="password" name="rePassword" id="repassword"/><span></span> </p>
+									<h5 id="repassworderror">请再次输入密码，两次输入必须一致</h5>
+								</div>
+								<div class="emailInput">
+									<p><i>验证码：</i><input type="text" name="verify" class="verify"/><img src={|U:'Register/verify'} id="imgVerify"/><span></span> </p>
+									<h5 id="verifyError"></h5>
+								</div>
+								
+								<div class="xieyi">
+									<input type="checkbox" name="agree"  id="" class="checkbox" value="1" />
+									<h3>我已看过并接受《用户协议》</h3>
+								</div>
+								<div class="emailInput emailSubmit">
+									<p><i></i><input type="submit" class="subbackground" /><span></span> </p>	
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--注册结束-->
+		<!--尾部开始-->
+		<include file="__VIEW__/commom/bottom.html"/>
+		<!--尾部结束-->
+	</body>

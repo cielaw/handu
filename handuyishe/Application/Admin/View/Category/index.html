@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<script type="text/javascript" src="__STATIC__/Admin/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/Admin/js/jquery-1.7.2.min.js"></script>
+    	<script type="text/javascript" src="__STATIC__/Admin/js/public.js"></script>
+    	<script type="text/javascript" src="__STATIC__/Admin/js/category.js"></script>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/css/goodsType.css"/>
+	</head>
+	<body>
+		<h3 class="title"><span class="btn btn-primary">{$type.tname}商品分类</span><a href="{|U:'addTopCate'}" class="btn">添加顶级分类</a></h3>
+		<table border="" cellspacing="" cellpadding="" class="table table-bordered">
+			<tr pid='0'>
+				<th>展开</th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>排序</th>
+				<th>操作</th>
+			</tr>
+			<form action="" method="post">
+			<foreach from='$result' key='$k' value='$v'>
+			<tr cid="{$v.cid}" pid="{$v.fid}">
+				<td><a href="javascript:void(0)" class="icon-plus"></a></td>
+				<td>{$v.cid}</td>
+				<td>{$v._name}</td>
+				<td><input type="text" name="{$v.cid}" id="order" value="{$v.sort}" /></td>
+				<td>
+					<a href="{|U:'addSonCate',array('fid'=>$v['cid'])}" class="btn btn-success btn-mini">添加子分类</a><a href="{|U:'edit',array('cid'=>$v['cid'])}" class="btn btn-info btn-mini">修改</a><a href="{|U:'delete',array('cid'=>$v['cid'])}" class="btn btn-danger btn-mini del">删除</a>
+					
+				</td>
+			</tr>
+			</foreach>
+			<tr pid='0'><th colspan="5"><input type="submit" class="btn btn-primary" value="排序"/></th></tr>
+			</form>
+		</table>
+	
+	</body>
+</html>

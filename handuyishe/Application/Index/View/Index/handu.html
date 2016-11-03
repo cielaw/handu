@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript">
+			var requestUrii = "{|U:'ajaxGetCart'}";
+		</script>
+		<script type="text/javascript" src="__STATIC__/index/js/handu.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/backTop.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/animate.js"></script>
+		<style type="text/css">
+			.backTop{
+			width: 50px;
+			height: 50px;
+			background: #C80A28;
+			cursor: pointer;
+			color: white;
+			line-height: 50px;
+		})
+		</style>
+	</head>
+	<body>
+		
+		<!--顶部导航开始-->
+		<div id="global_nav">
+			<div class="global_nav">
+				<div class="global_info_left">
+					<ul>
+						<li><a href="" class="returnIndex">返回首页</a></li>
+						<!--<li><a href="">收藏本站</a></li>-->
+					</ul>
+				</div>
+				<div class="global_info_right">
+					<ul class="reloZome">
+						<if value="isset($_SESSION['email']) && isset($_SESSION['uid'])">
+							<li><a href="">您好{$hd.session.email}！</a></li>
+							<li><a href="{|U:'Login/out'}">退出</a></li>
+						<else/>
+							<li><a href="">您好，欢迎光临韩都衣舍！</a></li>
+							<li><a href="{|U:'Login/login'}">登录 </a></li>
+							<li><a href="{|U:'Register/register'}" class="info_red">注册</a></li>
+						</if>
+						<li><a href="{|U:'Cart/cart'}">购物车</a></li>
+						<li><a href="{|U:'Member/index'}">个人中心</a></li>
+						<li><a href=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--顶部导航右边结束-->
+		<!--头部开始-->
+		<div id="header">
+			<div class="headerTop">
+				<div class="headerLogo">
+					<a href="__ROOT__"></a>
+				</div>
+				<div class="headerSearch">
+					<div class="searchForm">
+						<form action="{|U:'List/search'}" method="post">
+							<input type="text" name="words" id="" class="text"/>
+							<input type="submit" value="搜&nbsp;索"class="submit"/>
+						</form>
+					</div>
+					<div class="hotWords">
+					
+					</div>
+				</div>
+				<!-- 购物车区开始 -->
+				<div class="header_right">
+	
+					<a href="{|U:'cart/cart'}">
+						<span class='gwcxc'></span>我的购物车<span class = "youjiantou">&gt;</span></a>
+					<div class="gwca" style="display: none;">
+						<h3>购物车中还没有商品，赶紧选购吧！</h3>
+						<ul style="margin: 10px;">
+							
+						</ul>
+					</div>
+					<h class="gwcas" >
+								
+					</h>
+				</div>
+				<!-- 购物车区结束 -->
+			</div>
+			<div class="header_bottom">
+				<div class="header_complay">互联网时尚品牌运营集团
+</div>			
+				<div class="brand huadong">
+					<input type="button" class="prev" id="prev" value="&lt;" />
+					<input type="button" class="next" id="next"  value="&gt;" />
+					<ul>
+						<foreach from="$brand" key='$k' value='$v'>
+							<li><a href="{|U:'List/index',array('bid'=>$v['bid'])}" class="bandLogo"><img src="__ROOT__/{$v.logo}"/></a>$k</li>
+							
+						</foreach>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<!--头部结束-->
+		<!--导航开始-->
+		<div class="handu_nav">
+  <div class="handu_menu ">
+    <div class="all show_cate">
+      <a class="all_text" href="" target="_blank">全部商品分类<b></b></a>
+      <div class="categoryBd" style="display: block;">
+        <ul>
+        	<list from="$secondView" name='$v' row='7'>
+        	<if value='$hd.list.v.first'><li class="item item1" ><h3 class="itemHd itemHd1"></if>
+        	<if value='$hd.list.v.index==2'><li class="item item2" ><h3 class="itemHd itemHd2"></if>
+        	<if value='$hd.list.v.index==3'><li class="item item3 spe_item" ><h3 class="itemHd itemHd3"></if>
+        	<if value='$hd.list.v.index==4'><li class="item item4 spe_item" ><h3 class="itemHd itemHd4"></if>
+        	<if value='$hd.list.v.index==5'><li class="item item5 spe_item" ><h3 class="itemHd itemHd5"></if>
+        	<if value='$hd.list.v.index==6'><li class="item item6 spe_item" ><h3 class="itemHd itemHd6"></if>
+        	<if value='$hd.list.v.index==7'><li class="item item7 spe_item" ><h3 class="itemHd itemHd7 "></if>
+            
+              		<i></i>{$v.cateTopName}                            
+              		<span class="itemIcon"></span>
+            	</h3>
+            	
+                <p class="itemCol itemCol_sp"> 
+                			<list from="$v['second']" name='$s' row='4'>
+                    		<a href="{|U:'List/index',array('cid'=>$s['cid'])}" target="_blank"  font-weight: bold;">{$s.cname}</a>
+                    		</list>
+                    	
+              	</p>
+              	<if value="$hd.list.v.first || $hd.list.v.index==2">
+              	<p class="itemCol itemCol_sp" style="height: 16px;">                
+                   	<list from="$v['second']" name='$s' start='4' row='4'>
+                    		<a href="{|U:'List/index',array('cid'=>$s['cid'])}" target="_blank" style="color: rgb(200, 10, 40); font-weight: bold;">{$s.cname}</a>
+                    </list>
+                    
+              	</p>
+              	</if>
+              	<if value="$hd.list.v.first || $hd.list.v.index==2 ">
+                <div class="subCategory sub1" >
+                    <div class="subView">
+                  		<h3 class="subItem_hd" style="margin-left: 20px;">
+                  			<a href="" target="_blank">{$v.cateTopName}</a>
+                		</h3>
+                		<p class="subItem_cat" style="margin-left: 20px;">
+                		   <foreach from="$v['second']" key='$k' value='$v'>
+		                   <a href="{|U:"List/index",array('cid'=>$v['cid'])}" target="_blank">{$v.cname}</a>
+		                 	</foreach>
+                		</p>   
+                	</div>
+	                <div class="sub_logo">
+	                    <h3> 韩都集团 旗下品牌: </h3>
+				  			<foreach from="$brand" key='$key' value='$value'>
+				  			<a href="{|U:'brand/index',array('bid'=>$value['bid'])}" class="bandLogo"><img src="__ROOT__/{$value.logo}"/></a>
+				  			</foreach>
+				  	</div>
+         		</div>
+         		<else/>
+         		<div class="subCategory" >
+                 	<div class="sub_item">
+               			<h3 class="subItem_hd">
+                  			<a href="" target="_blank">{$v.cateTopName}</a>
+                		</h3>
+                		<p class="subItem_cat">
+                		   <foreach from="$v['second']" key='$k' value='$v'>
+		                   <a href="{|U:"List/index",array('cid'=>$v['cid'])}" target="_blank">{$v.cname}</a>
+		                 	</foreach>
+                		</p>    
+              		</div>
+	              	<div class="sub_logo">
+	                    <h3> 韩都集团 旗下品牌: </h3>
+	                    	<foreach from="$brand" key='$key' value='$value'>
+				  			<a href="{|U:'brand/index',array('bid'=>$value['bid'])}" class="bandLogo"><img src="__ROOT__/{$value.logo}"/></a>
+				  			</foreach>
+							
+				  	</div>
+          		</div>
+         		</if>
+       	 	</li>
+       	 	</list>
+       </ul>
+   
+      </div> 
+      
+   
+       
+    </div>
+    <ul class="handu_menu_o ">
+        <li class="menu_item"><a target="_blank" href="__ROOT__">首页</a></li>
+        <foreach from='$topCate' key='$k' value='$v'>
+        <li class="menu_item">
+        	<a target="_blank" href="{|U:'List/index',array('cid'=>$v['cid'])}">{$v.cname}</a>
+        </li>
+        </foreach>
+    </ul>
+</div>
+		<!--导航结束-->
+		<!--轮播开始-->
+		<div id="Carousel " class="zhuping_center" style="width: 100%;">
+			<div class="Carousel zhuping_lb" style="width: 100%;">
+				
+				<a href="{|U:'Details/index',array('gid'=>198)}" style="display: block;">
+						<div style="height:450px;width:100%;background:url(__STATIC__/index/images/lunbo/lunbo1.jpg) no-repeat center 0px;"></div>
+				</a>
+				<a href="{|U:'Details/index',array('gid'=>199)}">
+						<div style="height:450px;width:100%;background:url(__STATIC__/index/images/lunbo/lunbo2.jpg) no-repeat center 0px;"></div>
+				</a>
+				<a href="{|U:'Details/index',array('gid'=>200)}">
+						<div style="height:450px;width:100%;background:url(__STATIC__/index/images/lunbo/lunbo3.jpg) no-repeat center 0px;float:left;"></div>
+				</a>
+				<a href="{|U:'Details/index',array('gid'=>201)}">
+						<div style="height:450px;width:100%;background:url(__STATIC__/index/images/lunbo/lunbo4.jpg) no-repeat center 0px;float:left;"></div>
+				</a>
+				<a href="{|U:'Details/index',array('gid'=>202)}">
+						<div style="height:450px;width:100%;background:url(__STATIC__/index/images/lunbo/lunbo5.jpg) no-repeat center 0px;float:left;"></div>
+				</a>
+			</div>
+			<!-- 数字图标 -->
+	        <ul class="lunbo_list">
+	        	<li style="background:#B61B1F">1</li>
+	        	<li>2</li>
+	        	<li>3</li>
+	        	<li>4</li>
+	        	<li>5</li>
+	        </ul>
+	        <!-- 左右点击键 -->
+	        <a class="left" href="javascript:;">&lt;</a>
+	        <a class="right" href="javascript:;">&gt;</a>
+		</div>
+		<!--轮播结束-->
+		<!--产品展示开始-->
+		<div id="productsAll">
+			<div class="productsAllIn">
+				
+				<!--新品上市开始-->
+				<div id="new_arrival" class="new_arrival" style="position: relative;">
+					<h1>
+						<ul class="newArrival newTitle" style="">
+							<li style="background:#B61B1F;color:white; ">韩风女装</li>
+							<li>韩风男装</li>
+							<li>韩风名媛</li>
+						</ul>
+					</h1>
+					<list from="$newShelves" name='$n' >
+					<ul class="newContent newGoods" <if value="$hd.list.n.first">style="display: block;"<else/>style="display: none;"</if>>
+						<list from="$n" name='$k' row='5'>
+						<li>
+							<a href="{|U:'Details/index',array('gid'=>$k['gid'])}">
+								<img src="__ROOT__/{$k.listpic}" alt="" />
+								<span></span>
+							</a>
+							<h3><a href="{|U:'Details/index',array('gid'=>$k['gid'])}">{$k.gname|hd_substr:15,''}</a></h3>
+							<em>￥{$k.shopprice}</em>
+							<span class="originaPice">￥{$k.marketprice}</span>
+						</li>
+						</list>
+					</ul>
+					</list>
+				</div>
+				<!--新品上市结束-->
+				<!--Hstyle开始-->
+				<list from='$goodsBrand' name='$g' row='1'>
+				<div id="hstyle">
+					<h1>
+						<div class="hstyleNav">
+							<list from="$g['cate']" name='$c' row='5'>
+							<a href="{|U:'list/index',array('cid'=>$c['cid'],'bid'=>$c['bid'])}">{$c.cname}</a>
+							</list>
+							<a href="">更多></a>
+						</div>
+					</h1>
+					<div class="hstyleMain">
+						<div class="hstyleNavBar">
+							<div class="hNavTop">
+								<a href="{|U:'list/index',array('bid'=>19)}" class="navImg">
+									<img src="__STATIC__/index/images/special/hstyle/brand.jpg" alt="" />
+									<h3><span></span></h3>
+								</a>
+							</div>
+							<div class="hNavBottom">
+								<a href="">
+									<img src="__STATIC__/index/images/special/hstyle/piaoxinhui.jpg" width="190"/>
+								</a>
+							</div>
+						</div>
+						<div class="hstyleRight">
+							<div class="hstyleImg">
+								<a href="{|U:'details/index',array('gid'=>203)}">
+									<img src="__STATIC__/index/images/special/hstyle/big.jpg" class="bigImg" alt="" />
+								</a>
+								<a href="{|U:'details/index',array('gid'=>204)}">
+									<img src="__STATIC__/index/images/special/hstyle/mid.jpg" class="imgTop" />
+								</a>
+								<a href="{|U:'details/index',array('gid'=>205)}">
+									<img src="__STATIC__/index/images/special/hstyle/small.jpg" alt="" />
+								</a>
+							</div>
+							<div class="hstyleRank">
+								<h2>热销排行榜</h2>
+								<ul>
+									<list from="$g['goodHstyleRank']" name='$r' row='8'>
+									<li class="rankhs">
+										<h3 class="rankTitle" <if value="$hd.list.r.first">style="display: none;"</if> >								<span 
+											<if value="$hd.list.r.first">style="background: url(__STATIC__/index/images/01.png) no-repeat 0 0;" </if>
+											
+											<if value="$hd.list.r.index==2">style="background: url(__STATIC__/index/images/02.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==3">style="background: url(__STATIC__/index/images/03.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==4">style="background: url(__STATIC__/index/images/04.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==5">style="background: url(__STATIC__/index/images/05.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==6">style="background: url(__STATIC__/index/images/06.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==7">style="background: url(__STATIC__/index/images/07.png) no-repeat 0 0;" </if>
+											<if value="$hd.list.r.index==8">style="background: url(__STATIC__/index/images/08.png) no-repeat 0 0;" </if>
+											>
+										</span>
+											{$r.gname|hd_substr:10,'...'}
+										</h3>
+										<div class="rankA" <if value="$hd.list.r.index!=1">style="display: none;"</if> <if value="$hd.list.r.first">style="display: block;"</if>>
+											<a href="{|U:"Details/index",array('gid'=>$r['gid'])}"><img src="__ROOT__/{$r.listpic}" alt="" width="80" height="114"/></a>
+											<h3><a href="{|U:"Details/index",array('gid'=>$r['gid'])}">{$r.gname|hd_substr:10,'...'}</a></h3>
+											<br />
+											<p><span>￥{$r.marketprice}</span></p>
+											<br />
+											<p><span>￥{$r.shopprice}</span></p>
+											<br />
+											<!--<p>已售出<em>333</em>笔</p>-->
+										</div>
+									</li>
+									</list>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="newContent">
+								<list from="$g['goods']" name='$gs' row='5'>
+								<li>
+									<a href="{|U:"Details/index",array('gid'=>$gs['gid'])}">
+										<img src="__ROOT__/{$gs.listpic}" alt="" />
+										<span></span>
+									</a>
+									<h3><a href="{|U:"Details/index",array('gid'=>$gs['gid'])}">{$gs.gname|hd_substr:10,'...'}</a></h3>
+									<em>￥{$gs.marketprice}</em>
+									<span class="originaPice">￥{$gs.shopprice}</span>
+								</li>
+								</list>
+					</ul>
+					<ul class="newContent">
+								<list from="$g['goods']" name='$gs' start='5' row='5'>
+								<li>
+									<a href="{|U:"Details/index",array('gid'=>$gs['gid'])}">
+										<img src="__ROOT__/{$gs.listpic}" alt="" />
+										<span></span>
+									</a>
+									<h3><a href="{|U:"Details/index",array('gid'=>$gs['gid'])}">{$gs.gname|hd_substr:10,'...'}</a></h3>
+									<em>￥{$gs.marketprice}</em>
+									<span class="originaPice">￥{$gs.shopprice}</span>
+								</li>
+								</list>
+							</ul>
+				</div>
+				</list>
+				<!--Hstyle结束-->
+				<!--AMH开始-->
+				<list from='$goodsBrand' name='$g' start='1'>
+				<div class="amh" >
+					
+					<h1 <if value="$hd.list.g.first">style=" background: url(__STATIC__/index/images/web_index.png) no-repeat 0px -109px; ;"</if> <if value="$hd.list.g.index == 2">style=" background: url(__STATIC__/index/images/web_index.png) no-repeat 0px -140px;"</if>>
+						<div class="amhNav">
+							<list from="$g['cate']" name='$c' row='5'>
+							<a href="{|U:'List/index',array('bid'=>$c['bid'],'cid'=>$c['cid'])}">{$c.cname}</a>
+							</list>
+							<a href="">更多></a>
+						</div>
+					</h1>
+					<div class="amhMain">
+						<div class="amhNavBar">
+							<div class="hNavTop">
+								<if value="$hd.list.g.first">
+									<a href="{|U:'list/index',array('bid'=>23)}" class="navImg">
+										<img src="__STATIC__/index/images/special/AMH/brand.jpg" alt="" />
+										<h3><span></span></h3>
+									</a>
+								</if>
+								<if value="$hd.list.g.index ==2">
+									<a href="{|U:'list/index',array('bid'=>20)}" class="navImg">
+									<img src="__STATIC__/index/images/special/soneed/brand.jpg" alt="" />
+									<h3><span></span></h3>
+								</a>
+								</if>
+							</div>
+							<div class="hNavBottom">
+								<if value="$hd.list.g.first">
+									<img src="__STATIC__/index/images/special/AMH/amh.jpg" width="190"/>
+								</if>
+								<if value="$hd.list.g.index ==2">
+								<img src="__STATIC__/index/images/special/soneed/soneed.jpg" width="190"/>
+								</if>
+							</div>
+							
+						</div>
+						<div class="amhRight">
+							<div class="amhImg">
+								<if value="$hd.list.g.first">
+								<a href="{|U:'details/index',array('gid'=>203)}">
+									
+									<img src="__STATIC__/index/images/special/AMH/large.jpg" class="bigImg" alt="" />
+									
+								</a>
+								</if>
+								<if value="$hd.list.g.index ==2">
+								<a href="{|U:'details/index',array('gid'=>207)}">
+									
+									<img src="__STATIC__/index/images/special/soneed/large.jpg" class="bigImg" alt="" />
+									
+								</a>
+								</if>
+								
+							</div>
+							<div class="amhFashion">
+								<if value="$hd.list.g.first">
+								<a href="{|U:'details/index',array('gid'=>204)}">
+									
+									<img src="__STATIC__/index/images/special/AMH/mid.jpg" alt="" />
+									
+								</a>
+								</if>
+								<if value="$hd.list.g.index ==2">
+								<a href="{|U:'details/index',array('gid'=>208)}">
+									
+									<img src="__STATIC__/index/images/special/soneed/mid.jpg" alt="" />
+									
+								</a>
+								</if>
+								<if value="$hd.list.g.first">
+								<a href="{|U:'details/index',array('gid'=>206)}">
+									
+									<img src="__STATIC__/index/images/special/AMH/small.jpg" alt="" />
+									
+								</a>
+								</if>
+								<if value="$hd.list.g.index ==2">
+								<a href="{|U:'details/index',array('gid'=>209)}">
+									
+									<img src="__STATIC__/index/images/special/soneed/small.jpg" alt="" />
+									
+								</a>
+								</if>
+							</div>
+						</div>
+					</div>
+					<ul class="newContent">
+						<list from="$g['goods']" name='$d' row='5'>
+						<li>
+							<a href="{|U:'details/index',array('gid'=>$d['gid'])}">
+								<img src="__ROOT__/{$d.listpic}" alt="" />
+								<span></span>
+							</a>
+							<h3><a href="{|U:'details/index',array('gid'=>$d['gid'])}">{$d.gname|hd_substr:15,'...'}</a></h3>
+							<em>￥{$d.shopprice}</em>
+							<span class="originaPice">￥{$d.marketprice}</span>
+						</li>		
+						</list>		
+					</ul>
+				</div>
+				</list>
+				<!--AMH结束-->
+			</div>
+		</div>
+		<div class="backTop">
+			返回顶部
+		</div>
+		<!--产品展示结束-->
+		<!--尾部开始-->
+		<include file="__VIEW__/commom/bottom.html"/>
+		<!--尾部结束-->
+	</body>
+	<script type="text/javascript">
+		$(function(){
+		var q = 0;
+		function runssp(){
+	       q++;
+	       // 判断
+	       if(q==3){
+	       	  q=0;
+	       }
+	       // 新品标题变化
+	       $('.newGoods').eq(q).fadeIn().siblings('ul').fadeOut();
+	       // 新品内容变化
+	        $('.newArrival li').eq(q).css({background:'#B61B1F',color:'white'}).stop().siblings('li').css({background:'white',color:'black'});
+		}
+			// 启动定时器
+			 timenew = setInterval(runssp,3000);
+		
+		    $('#new_arrival').hover(function(){
+		         // 停止定时器
+		         clearInterval(timenew);
+		    },function(){
+		    	 // 启动定时器
+		         timenew = setInterval(runssp,3000);
+		    });
+    		$('.newArrival>li').mouseover(function(){
+    			 $(this).css({background:'#B61B1F',color:'white'}).siblings('li').css({background:'white',color:'black'});
+		         $(this).parents('.new_arrival').find('.newContent').eq($(this).index()).fadeIn('500').siblings('ul').fadeOut('500');
+		    })
+    		$('.backTop').backTop();
+    		//hsyle
+			var imgs = $.makeArray($("#hstyle img"));
+			
+			$(".amh").mouseout(function  () {
+				  for (var i=0; i<imgs.length; i++){
+		  // 需要使用自定义的animate函数，不能使用jquery自带的animate函数
+			animate(imgs[i],{left:0,opacity:1},100);
+		 }
+	});
+
+	for (var i=0; i<imgs.length; i++) {
+		  
+		  imgs[i].onmouseover=function  () {
+			 
+			 for (var j=0; j<imgs.length; j++) {
+			 animate(imgs[j],{left:0,opacity:0.7},100);
+			  
+			 }
+             animate(this,{left:-3,opacity:1},100);
+			
+		  }
+	
+	}
+		});	
+		$(function(){
+			//hsyle
+			var imgs = $.makeArray($("#new_arrival img"));
+			
+			$(".amh").mouseout(function  () {
+				  for (var i=0; i<imgs.length; i++){
+				  // 需要使用自定义的animate函数，不能使用jquery自带的animate函数
+					animate(imgs[i],{opacity:1},100);
+				 }
+			});
+		
+			for (var i=0; i<imgs.length; i++) {
+				  
+				  imgs[i].onmouseover=function  () {
+					 
+					 for (var j=0; j<imgs.length; j++) {
+					 animate(imgs[j],{opacity:0.5},100);
+					  
+					 }
+		             animate(this,{opacity:1},100);
+					
+				  }
+			
+			}
+		})
+		
+	</script>
+</html>

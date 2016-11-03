@@ -1,0 +1,115 @@
+#listContent {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#listContent .listContent {
+  padding-top: 70px;
+  width: 1200px;
+  margin: 0 auto;
+}
+#listContent .listContent .cateRight {
+  width: 1200px;
+}
+#listContent .listContent .cateRight .handuListNav {
+  width: 1200px;
+  height: 26px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 26px;
+}
+#listContent .listContent .cateRight .productGrid {
+  width: 1200px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin {
+  width: 1200px;
+  padding-bottom: 70px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li:hover {
+  overflow: visible;
+  border: 1px solid white;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li:hover .price {
+  bottom: 0px;
+  left: 0px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 235px;
+  height: 288px;
+  margin-bottom: 10px;
+  border: 1px solid #C3C3C3;
+  position: relative;
+  overflow: hidden;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div:hover {
+  border: 1px solid #C80A28;
+  z-index: 30;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div {
+  width: 234px;
+  height: 330px;
+  position: absolute;
+  background: white;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div img {
+  width: 222px;
+  height: 222px;
+  display: block;
+  margin: 5px auto;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price {
+  height: 35px;
+  width: 228px;
+  position: absolute;
+  bottom: 37px;
+  left: 0px;
+  background: white;
+  z-index: 100;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price .newPrice {
+  color: #C80A28;
+  float: left;
+  font-family: arial;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 9px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .price .oldPrice {
+  text-decoration: line-through;
+  margin-right: 16px;
+  margin-top: 2px;
+  line-height: 30px;
+  font-size: 16px;
+  color: black;
+  float: right;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productTitle {
+  font-family: 微软雅黑;
+  line-height: 18px;
+  height: 18px;
+  position: relative;
+  z-index: 10;
+  padding: 4px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus {
+  height: 47px;
+  width: 235.317px;
+  border-top: 1px solid #DDD;
+  background: white;
+  position: relative;
+  z-index: 30;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus span {
+  display: block;
+  float: left;
+  height: 38px;
+  width: 117px;
+  text-align: center;
+  margin-top: 10px;
+}
+#listContent .listContent .cateRight .productGrid .productGridin ul li div .productStatus .first {
+  border-right: 1px solid #DDD;
+}
+/*# sourceMappingURL=search.css.map */

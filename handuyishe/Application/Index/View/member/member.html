@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/member.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/commom.js"></script>
+		<base target="iframe"/>
+	</head>
+	<body>
+		<!--顶部导航开始-->
+		<include file='__VIEW__/commom/header' />
+		<!--导航结束-->
+		<!--会员主体开始-->
+		<div id="member">
+			<div class="member">
+				<!--面包屑导航开始-->
+				<!--<h3 class="memNav">您当前的位置:<a>韩都衣舍</a> &gt; <a href="">我的韩都</a></h3>-->
+				<!--面包屑导航结束-->
+				<!--会员具体内容开始-->
+				<div class="memContent">
+					<div class="memLeft">
+						<a href="" class="home"><span>我的韩都</span></a>
+						<div class="nav">
+						<dl>
+							<dt>交易管理<span></span></dt>
+							<dd><a href="{|U:'order'}">我的订单</a></dd>
+						</dl>
+						<dl>
+							<dt>个人信息<span></span></dt>
+							<dd><a href="{|U:'profile'}">基本资料</a></dd>
+							<dd><a href="{|U:'address'}">地址管理</a></dd>
+							<dd><a href="{|U:'edit_password'}">修改密码</a></dd>
+						</dl>
+					</div>
+					</div>
+					
+					<div class="memRight">
+						 <iframe src="{|U:'profile'}" scrolling="no" frameborder="0" style="height:100%;width:100%;" name="iframe"></iframe>
+					</div>
+				</div>
+				<!--会员具体内容结束-->
+			</div>
+		</div>
+		<!--会员主体结束-->
+		<!--尾部开始-->
+		<!--尾部开始-->
+		<include file="__VIEW__/commom/bottom.html" />
+		<!--尾部结束-->
+			
+		

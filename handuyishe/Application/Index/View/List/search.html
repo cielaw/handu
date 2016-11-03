@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/search.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/commom.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/list.js"></script>
+		<script type="text/javascript">
+			var requestUrii = "{|U:'Index/ajaxGetCart'}";
+		</script>
+	</head>
+	<body>
+		<include file='__VIEW__/commom/header' />
+		<!--列表内容开始-->
+		<div id="listContent">
+			<div class="listContent">
+				
+				<div class="cateRight" style="padding: 0px;width: 1200;">
+					<h3 style="padding-top: 15px;;font-size: 20px;">搜索结果:</h3>
+					<div class="productGrid">
+						<div class="productGridin" style="border: 1px solid #CCCCCC; padding-top: 50px;">
+							<ul>
+								<if value="!empty($goods)">
+								<foreach from="$goods" key="$k" value="$v">
+								<li class="">
+									<div class="">
+										<a href="{|U:'details/index',array('gid'=>$v['gid'])}"><img src="__ROOT__/{$v.indexpic}"/></a>
+									
+									<h3 class="productTitle">
+										<a href="{|U:'details/index',array('gid'=>$v['gid'])}">{$v.gname}</a>
+									</h3>
+									<p class="price">
+										<span class="newPrice">¥{$v.shopprice}</span>
+										<span class="oldPrice">¥{$v.marketprice}</span>
+									</p>
+									</div>
+									
+								</li>
+								</foreach>
+								<else/>
+								<p style="font-weight:700;font-size: 20px;text-align: center;margin-top: 20px;">没有商品</p>
+								</if>
+							</ul>
+							<h3 style="text-align: center;clear: both;">{$page}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--列表内容结束-->
+		<!--尾部开始-->
+		<include file="__VIEW__/commom/bottom.html" />
+		<!--尾部结束-->
+		<script type="text/javascript">
+			$(function(){
+				$('cateTree dt').toggle(function(){
+					$(this).find('.h3TopCate').show();
+				},function(){
+					$(this).find('.h3TopCate').hide();
+				});
+			})
+		</script>
+	</body>

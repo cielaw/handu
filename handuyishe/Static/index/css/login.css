@@ -1,0 +1,100 @@
+.loginAll {
+  width: 100%;
+}
+.loginAll .loginAd {
+  width: 1000px;
+  height: 60px;
+  margin: 20px auto;
+}
+.loginAll .loginContent {
+  width: 1100px;
+  margin: 0 auto;
+}
+.loginAll .loginContent .loginLeft {
+  width: 485px;
+  height: 427px;
+  float: left;
+  border-right: 1px dashed #333;
+}
+.loginAll .loginContent .loginLeft img {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.loginAll .loginContent .loginRight {
+  width: 608px;
+  height: 427px;
+  margin-bottom: 15px;
+  float: right;
+}
+.loginAll .loginContent .loginRight .loginForm {
+  width: 382px;
+  height: 382px;
+  margin: 20px auto;
+}
+.loginAll .loginContent .loginRight .loginForm h3 {
+  height: 30px;
+  width: 300px;
+  margin: 10 auto;
+  border-bottom: 1px dashed #EEE;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 25px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome {
+  width: 300px;
+  height: 215px;
+  margin-top: 50px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p {
+  width: 300px;
+  height: 35px;
+  font-family: "Microsoft YaHei";
+  line-height: 35px;
+  font-size: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p span {
+  width: 75px;
+  height: 33px;
+  display: inline-block;
+  text-align: right;
+  font-family: "Microsoft YaHei";
+  line-height: 17px;
+  font-size: 14px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p input {
+  width: 209px;
+  height: 34px;
+  vertical-align: 5px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p .submit {
+  width: 140px;
+  height: 35px;
+  background: #BE0929;
+  border: none;
+  color: white;
+  font-size: ;
+  vertical-align: 11px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p .checkbox {
+  position: absolute;
+  right: 12px;
+  top: 4px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p .save {
+  font-size: 12px;
+  vertical-align: 10px;
+  margin-left: 25px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome p .register {
+  margin-left: 100px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome .submitP {
+  width: 350px;
+}
+.loginAll .loginContent .loginRight .loginForm .inputSome .toRegister {
+  height: 33px;
+  margin-top: 0px;
+}
+/*# sourceMappingURL=login.css.map */

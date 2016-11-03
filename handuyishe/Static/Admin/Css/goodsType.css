@@ -1,0 +1,17 @@
+* {
+  font-size: 12px;
+}
+.title a {
+  float: right;
+  font-size: 18px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.table {
+  font-size: 12px;
+  float: left;
+}
+.table tr td a {
+  margin-left: 5px;
+}
+/*# sourceMappingURL=goodsType.css.map */

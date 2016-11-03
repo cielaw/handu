@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/list.css"/>
+		<script type="text/javascript" src="__STATIC__/index/js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/commom.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/list.js"></script>
+		<script type="text/javascript" src="__STATIC__/index/js/backTop.js"></script>
+		<style type="text/css">
+			.backTop{
+			width: 50px;
+			height: 50px;
+			background: #C80A28;
+			cursor: pointer;
+			color: white;
+			line-height: 50px;
+		})
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$('.backTop').backTop();	
+			})
+			
+		</script>
+	</head>
+	<body>
+		<include file='__VIEW__/commom/header' />
+		<!--列表内容开始-->
+		<div id="listContent">
+			<div class="listContent">
+				<div class="cateLeft" >
+					<div class="cateTree">
+						<foreach from='$leftBrand' key='$k' value='$v'>
+						<dl>
+							<dt class="hstyle">
+								<a href="{|U:'index',array('bid'=>$v['bid'])}" >{$v.bname}</a><i></i>
+							</dt>
+							<dd>
+								
+								<ul class="ulSecCate" <if value="$v['bid']==$_GET['bid']">style="display:block;"<else/>style="display:none;"</if>>
+									<list from="$v['bvalue']" name='$d'  start="0">
+									<li  >
+										<a href="{|U:'index',array('cid'=>$d['cid'],'bid'=>$v['bid'])}" <if value="$_GET['cid'] == $d['cid']">style="color: #C8400A;"</if> >{$d.cname}</a>
+									</li>
+									</list>
+								</ul>
+							</dd>	
+						</dl>
+						</foreach>
+					</div>
+					<div class="top10">
+						<h3>人气热卖</h3>
+						<foreach from='$hotGoods' key='$k' value='$v'>
+						<div class="topOne">
+							<a href="{|U:'Details/index',array('gid'=>$v['gid'])}"> 
+								<img src="__ROOT__/{$v.listpic}"/>
+							</a>
+							<p>
+								<span class="price" style="float: left;">￥{$v.shopprice}</span>
+								<span class='num' style="float: right;">销量：<i>{$v.pur_num}</i></span>
+							</p>
+							<h1><a href="{|U:'Details/index',array('gid'=>$v['gid'])}">{$v.gname|hd_substr:10,'...'}</a></h1>
+						</div>
+						</foreach>
+					</div>
+				</div>
+				<div class="cateRight">
+					<div class="handuListNav">
+						您所在的位置 <code>&gt;</code>
+						<a href="{|U:'List/index',array('bid'=>$bInfo['bid'])}">{$bInfo.bname}&gt;</a>
+						<foreach from='$cate' key='$k' value='$v'>
+						<a href="{|U:'List/index',array('cid'=>$v['cid'])}">{$v.cname}</a> <code>&gt;</code>
+						</foreach>
+					</div>
+					<!--筛选开始-->
+					<div id="attr-box">
+						<div class="attr">
+							<ul>
+								<foreach from='$attr' key='$k' value='$v'>
+								<li class="attr-border">
+										<h2>{$v.name}</h2>
+										<ul class="attr-content">
+											<?php
+												$temp = $param;
+												//为'不限'准备的
+												$temp[$k] = 0;
+											?>
+											<li>
+												<!--通过bid请求-->
+												<if value=" !isset($_GET['cid'])  && isset($_GET['bid'])">
+													<!--有上架时间请求-->
+													<if value="isset($_GET['shelvestime'])">
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--价格参数请求-->
+													<elseif value="isset($_GET['price'])"/>
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--销量参数请求-->
+													<elseif value="isset($_GET['num'])"/>
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--默认请求-->
+													<else/>		
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>
+													</if>
+													
+												</if>
+												<!--通过bid和cid结合请求-->
+												<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+													<!--有上架时间请求-->
+													<if value="isset($_GET['shelvestime'])">
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--价格参数请求-->
+													<elseif value="isset($_GET['price'])"/>
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--销量参数请求-->
+													<elseif value="isset($_GET['num'])"/>
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--默认请求-->
+													<else/>		
+														<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>
+													</if>
+												</if>
+												<!--通过cid结合请求-->
+												<if value="isset($_GET['cid'])  && !isset($_GET['bid'])">
+													<!--有上架时间请求-->
+													<if value="isset($_GET['shelvestime'])">
+														<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--价格参数请求-->
+													<elseif value="isset($_GET['price'])"/>
+														<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--销量参数请求-->
+													<elseif value="isset($_GET['num'])"/>
+														<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>		
+													<!--默认请求-->
+													<else/>		
+														<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'param'=>implode('_',$temp))}" <if value="$param[$k]==0">class='hover'</if>>不限</a>
+													</if>
+												</if>
+												
+											</li>
+											<foreach from="$v['value']" key='$key' value='$value'>
+												<?php
+													$temp[$k] =$value['gaid']
+												?>
+												<li>
+													<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+														<if value="isset($_GET['shelvestime'])">
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'bid'=>$_GET['bid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['price'])"/>
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'bid'=>$_GET['bid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['num'])"/>	
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'bid'=>$_GET['bid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<else/>
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'bid'=>$_GET['bid'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														</if>
+														
+													<elseif value="isset($_GET['bid']) && empty($_GET['cid'])"/>	
+														<if value="isset($_GET['shelvestime'])">
+															<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['price'])"/>
+															<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['num'])"/>	
+															<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<else/>
+															<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														</if>
+													 	
+													<else/>
+														<if value="isset($_GET['shelvestime'])">
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'shelvestime'=>$_GET['shelvestime'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['price'])"/>
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'price'=>$_GET['price'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<elseif value="isset($_GET['num'])"/>	
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'num'=>$_GET['num'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														<else/>
+															<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'param'=>implode('_',$temp))}"  <if value="$param[$k]==$value['gaid']">class='hover'</if>>{$value.gavalue}</a>
+														</if>
+													</if>
+													
+												</li>
+											</foreach>
+										</ul>
+									</li>
+								</foreach>
+								
+							</ul>
+							<div class="more">
+								更多选项(商品特性)	
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						$(function(){
+							('.attr-content>li:gt(5)').hide();
+						})
+					</script>
+					<!--筛选结束-->
+					<div class="sortBar">
+						<div class="sortBarLeft"  style="float: left;">
+							<ul >
+								<!--默认排序-->
+								<li>
+									<!--通过cid访问-->
+									<if value=" !isset($_GET['cid'])  && isset($_GET['bid'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'])}" >默认排序</a>
+												</if>
+									<!--通过bid和cid访问-->
+									<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'bid'=>$_GET['bid'])}" >默认排序</a>
+	                                                                                                                                                                                                                  											</if>
+									<!--通过cid请求-->
+									<if value="isset($_GET['cid'])  && !isset($_GET['bid'])">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'])}" >默认排序</a>
+												</if>
+									
+								</li>
+								<!--上架时间-->
+								<li>
+									<!--通过bid进入列表页-->
+									<if value="!isset($_GET['cid'])  && isset($_GET['bid'])">
+													<!--如果没有上架时间get参数的情况-->
+													<if value="!isset($_GET['shelvestime'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<!--如果有上架时间和get参数且为零的情况-->
+													<if value="isset($_GET['shelvestime']) && $_GET['shelvestime']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<!--上架时间的get参数为1的情况-->
+													<if value="$_GET['shelvestime']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'shelvestime'=>0)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+													<if value="!isset($_GET['shelvestime'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['shelvestime']) && $_GET['shelvestime']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['shelvestime']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'shelvestime'=>0)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['cid'])  && !isset($_GET['bid'])">
+													<if value="!isset($_GET['shelvestime'])">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['shelvestime']) && $_GET['shelvestime']==0">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'shelvestime'=>1)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['shelvestime']==1">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'shelvestime'=>0)}" >上架时间</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+									
+								</li>
+								<li>
+									<!--通过cid和bid进入列表页-->
+									<if value="empty($_GET['cid'])  && isset($_GET['bid'])">
+													<if value="!isset($_GET['price'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['price']) && $_GET['price']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['price']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'price'=>0)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+													<if value="!isset($_GET['price'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['price']) && $_GET['price']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['price']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'price'=>0)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['cid'])  && !isset($_GET['bid'])">
+													<if value="!isset($_GET['price'])">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['price']) && $_GET['price']==0">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'price'=>1)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['price']==1">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'price'=>0)}" >价格</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+									
+								</li>
+								<li>
+									<!--通过bid进入列表页-->
+									<if value="empty($_GET['cid'])  && isset($_GET['bid'])">
+													<if value="!isset($_GET['num'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['num']) && $_GET['num']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['num']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'num'=>0)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['bid']) && isset($_GET['cid'])">
+													<if value="!isset($_GET['num'])">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['num']) && $_GET['num']==0">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['num']==1">
+													<a href="{|U:'List/index',array('bid'=>$_GET['bid'],'cid'=>$_GET['cid'],'num'=>0)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												<if value="isset($_GET['cid'])  && !isset($_GET['bid'])">
+													<if value="!isset($_GET['num'])">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -1px -1px;"></span>
+													</if>
+													<if value="isset($_GET['num']) && $_GET['num']==0">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'num'=>1)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -9px -1px;"></span>
+													</if>
+													<if value="$_GET['num']==1">
+													<a href="{|U:'List/index',array('cid'=>$_GET['cid'],'num'=>0)}" >销量</a>
+													<span style="background: url(__STATIC__/index/images/arrs.png) no-repeat -25px -1px;"></span>
+													</if>
+												</if>
+												
+								</li>
+								
+							</ul>
+						</div>
+						<div class="productPage" style="float: right;margin-right: 5px;margin-top: 10px;">
+								{$page2}
+						</div>
+					</div>
+					
+					<div class="productGrid" style="border: 1px solid #AAAAAA;padding: 10px;">
+						<div class="productGridin">
+							<ul>
+								<if value="!empty($goods)">
+								<foreach from="$goods" key="$k" value="$v">
+								<li class="">
+									<div class="">
+										<a href="{|U:'details/index',array('gid'=>$v['gid'])}"><img src="__ROOT__/{$v.indexpic}"/></a>
+									
+									<h3 class="productTitle">
+										<a href="{|U:'details/index',array('gid'=>$v['gid'])}">{$v.gname}</a>
+									</h3>
+									<p class="price">
+										<span class="newPrice">¥{$v.shopprice}</span>
+										<span class="oldPrice">¥{$v.marketprice}</span>
+									</p>
+									</div>
+									
+								</li>
+								</foreach>
+								<else/>
+								<p style="font-weight:700;font-size: 20px;text-align: center;margin-top: 20px;">没有商品</p>
+								</if>
+							</ul>
+							
+						</div>
+						<h3 style="text-align: center;clear: both;padding-top: 60px;">{$page}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="backTop">
+			返回顶部
+		</div>
+		<!--列表内容结束-->
+		<!--尾部开始-->
+		<include file="__VIEW__/commom/bottom.html" />
+		<!--尾部结束-->
+		<script type="text/javascript">
+			var requestUrii = "{|U:'Index/ajaxGetCart'}";
+		</script>
+	</body>

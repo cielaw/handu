@@ -1,0 +1,155 @@
+#register {
+  width: 100%;
+}
+.adRegister {
+  width: 1100px;
+  height: 60px;
+  margin: 20px auto;
+}
+.adRegister img {
+  width: 1100px;
+}
+.Register {
+  width: 1100px;
+  margin: 0 auto;
+}
+.Register .RegisterLeft {
+  width: 405px;
+  margin-left: 30px;
+  float: left;
+  border-right: 1px dashed #DDD;
+}
+.Register .RegisterLeft .login {
+  width: 360px;
+  height: 43.5px;
+  font-family: "Microsoft YaHei";
+  font-size: 13px;
+  line-height: 40px;
+}
+.Register .RegisterLeft .login .toLogin {
+  width: 103px;
+  height: 29px;
+  display: inline-block;
+  line-height: 29px;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+  background: url(../images/NEWS_login.png) no-repeat -347px -211px;
+}
+.Register .RegisterLeft .QRCode {
+  margin-top: 30px;
+  width: 360px;
+  height: 250px;
+}
+.Register .RegisterLeft .subscribe {
+  width: 380px;
+  height: 97px;
+  background: url(../images/footer022.png) no-repeat 0 0;
+}
+.Register .RegisterLeft .subscribe .subscribeForm {
+  width: 338px;
+  height: 27px;
+  padding-top: 30px;
+}
+.Register .RegisterLeft .subscribe .subscribeForm .subscribeText {
+  width: 252px;
+  height: 27px;
+}
+.Register .RegisterLeft .subscribe .subscribeForm .subscribeBotton {
+  width: 70px;
+  height: 22px;
+  background: url(../images/footer00.png) no-repeat 0 0;
+  border: none;
+}
+.Register .RegisterRight {
+  width: 660px;
+  float: left;
+}
+.Register .RegisterRight .RegisterReal {
+  width: 600px;
+  height: 500px;
+  margin: 10 auto;
+}
+.Register .RegisterRight .RegisterReal h3 {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 13px;
+}
+.Register .RegisterRight .RegisterReal h3 span {
+  margin-left: 30px;
+  margin-right: 10px;
+  vertical-align: -5px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(../images/NEWS_login.png) no-repeat 0px -326px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput {
+  height: 66px;
+  font-family: "Microsoft YaHei";
+  line-height: 33px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput p i {
+  width: 115px;
+  height: 33px;
+  display: inline-block;
+  text-align: right;
+  font-size: 13px;
+  font-family: "Microsoft YaHei";
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput p input {
+  width: 210px;
+  height: 33px;
+  background: url(../images/shopping_login.png) no-repeat 0px -182px;
+  border: none;
+  text-indent: 5px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput p .verify {
+  width: 100px;
+  background: white;
+  border: 1px solid #DDD;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput p img {
+  width: 86px;
+  height: 31px;
+  vertical-align: -10px;
+  margin-left: 5px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailInput h5 {
+  margin-left: 115px;
+  color: #7B7B7B;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+}
+.Register .RegisterRight .RegisterReal .registerForm .xieyi {
+  height: 33px;
+  line-height: 33px;
+  margin-left: 120px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .xieyi h3 {
+  float: left;
+  line-height: 33px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .xieyi .checkbox {
+  float: left;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailSubmit {
+  position: relative;
+  margin-left: 50px;
+}
+.Register .RegisterRight .RegisterReal .registerForm .emailSubmit .subbackground {
+  width: 171px;
+  height: 43px;
+  background: url(../images/NEWS_login.png) no-repeat 0px -51px;
+  border: none;
+  font-family: SimSun, tahoma, arial, sans-serif;
+  font-size: 18px;
+  color: #FFF;
+  position: absolute;
+  top: 5px;
+  left: 70px;
+}
+/*# sourceMappingURL=register.css.map */

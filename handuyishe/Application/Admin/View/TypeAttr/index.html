@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/Admin/css/goodsType.css"/>
+	</head>
+	<body>
+		<h3 class="title"><span class="btn btn-primary">{$type.tname}类型的属性</span><a href="{|U:'GoodsType/index'}" class="btn">类型列表</a></h3>
+		<table border="" cellspacing="" cellpadding="" class="table table-bordered">
+			<tr><th>属性ID</th><th>属性名称</th><th>属性类别</th><th>属性值</th><th>操作</th></tr>
+			<foreach from='$result' key='$k' value='$v'>
+			<tr><td>{$v.aid}</td><td>{$v.aname}</td><td><if value="$v['atype'] == 0">属性<else/>规格</if></td><td>{$v.avalue}</td><td><a href="{|U:'editTypeAttr',array('aid'=>$v['aid'])}" class="btn btn-info">修改</a><a href="{|U:'delTypeAttr',array('aid'=>$v['aid'])}" class="btn btn-danger">删除</a></td></tr>
+			</foreach>
+			<tr><td colspan="5"><a href="{|U:'addTypeAttr',array('tid'=>$type['tid'])}" class="btn btn-success">添加属性</a></td></tr>	
+		</table>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/shoppingSuccess.css"/>
+	</head>
+	<body>
+		<!--顶部导航开始-->
+		<include file='__VIEW__/commom/header_cart.html' />
+		<!--顶部导航右边结束-->
+		<!--购买产品确认开始-->
+		<div id="checkoutAll">
+			<div class="checkoutHeader">
+				<a href="" class="headerLeft"></a>
+				<div class="headerRight"></div>
+				<div class="successInfo">
+					<h3>恭喜您,订单提交成功！</h3>
+					<table border="0" cellspacing="" cellpadding="">
+						<tr>
+							<th>订单编号</th>
+							<th>应付金额</th>
+							<th>配送方式</th>
+							<th>支付方式</th>
+						</tr>
+						<tr>
+							<td>{$success.No}</td>
+							<td>{$success.price}</td>
+							<td>{$success.status}</td>
+							<td>{$success.payway}</td>
+						</tr>
+					</table>
+					<h3 style="margin-left: 550px;margin-top: 10px;padding-top: 0px;">
+						<a href="{|U:'Cart/pay',array('orderid'=>$success['id'])	}" style="font-size:15px;color:white;margin:0 auto; display:block;background: #C80A28;width: 150px;height: 40px;line-height: 40px;">立即支付</a>
+					</h3>
+				</div>
+				<?php
+					unset($_SESSION['success']);
+					?>
+			</div>	
+			</div>
+		<!--购买产品确认结束-->
+		<!--尾部开始-->
+		<include file='__VIEW__/commom/bottom.html' />
+		<!--尾部结束-->
+	</body>
+		

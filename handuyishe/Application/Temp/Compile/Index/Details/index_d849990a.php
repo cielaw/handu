@@ -1,0 +1,40 @@
+<?php if(!defined('HDPHP_PATH'))exit;C('SHOW_NOTICE',FALSE);?>
+<!--尾部开始-->
+
+		<div id="footer">
+			<div class="footerIn">
+				<!--优势开始-->
+				<div class="advance">
+					
+				</div>
+				<!--优势结尾-->
+				<!--尾部导航开始-->
+				<div class="blackOut">
+					<div class="footer_black"> 
+    				 	<a href="" target="_blank">首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+     					<a href="http://www.houdunwang.com">后盾网</a>
+   					</div>
+   				</div>
+				<!--尾部导航结束-->
+				<!--icon开始-->
+				<div class="iconBottom">
+					<center>
+         				<img src="http://localhost/handuyishe/Static/index/images/zxmbutton02_sy.jpg" alt="" height="38" border="0" width="114">
+        				<a href="" target="_blank">
+        					<img src="http://localhost/handuyishe/Static/index/images/zxmbutton05_sy.jpg" alt="" style="margin:5px 5px 0 5px;" height="38" border="0" width="103">
+        					
+        				</a>
+						<a href="" target="_blank" style="display:inline-block;position:relative;width:102px;height:37px;">
+       						<img src="http://localhost/handuyishe/Static/index/images/cnnic.png" alt="" height="37" border="0" width="102">
+							
+						</a>
+        				<a style="display: inline-block;width: 74px;margin: 4px 3px;"> 
+        					<img src="http://localhost/handuyishe/Static/index/images/cctv.png" alt="" height="40" border="0" width="74">
+        					
+        				</a>
+        			</center>
+				</div>
+				<!--icon结束-->	
+			</div>
+		</div>
+		<!--尾部结束-->
